@@ -1,0 +1,271 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="AI Dev Pipeline" id="pipeline1">
+    <mxGraphModel dx="4162" dy="1564" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="2200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JIRA" parent="1" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=12;" value="JIRA (references persona by name)" vertex="1">
+          <mxGeometry height="60" width="180" x="-160" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="PERSONA" parent="1" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;" value="Persona.md (Actor definitions)" vertex="1">
+          <mxGeometry height="60" width="180" x="260" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="FIGMA" parent="1" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" value="Figma ticket/reference (node ID)" vertex="1">
+          <mxGeometry height="60" width="180" x="480" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SSWA" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=12;" value="SSWA / GGR" vertex="1">
+          <mxGeometry height="60" width="160" x="700" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OTHERS_SRC" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=12;" value="Others" vertex="1">
+          <mxGeometry height="60" width="140" x="900" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="COMPLIB" parent="1" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=12;" value="Component Library" vertex="1">
+          <mxGeometry height="60" width="180" x="480" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="THEME" parent="1" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=12;" value="Design Guidelines &amp; Theme Library" vertex="1">
+          <mxGeometry height="60" width="180" x="680" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="FIGMADESIGNS" parent="1" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=12;" value="Figma Designs (mapped to library)" vertex="1">
+          <mxGeometry height="60" width="180" x="880" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="FIGMAMCP" parent="1" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" value="Figma MCP Server resolves node ID -&gt; context" vertex="1">
+          <mxGeometry height="60" width="260" x="480" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="INGEST" parent="1" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" value="Ingestion Pipeline Reads input, checks completeness, resolves persona refs" vertex="1">
+          <mxGeometry height="80" width="320" x="300" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="CLASSIFY" parent="1" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=12;" value="Classify input" vertex="1">
+          <mxGeometry height="50" width="200" x="340" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="ACTOR" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=12;" value="Actor (resolved from persona.md)" vertex="1">
+          <mxGeometry height="60" width="200" x="160" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="SCEN" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=12;" value="Scenario" vertex="1">
+          <mxGeometry height="60" width="160" x="400" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="OTH" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=12;" value="Others" vertex="1">
+          <mxGeometry height="60" width="160" x="600" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="AJSON" parent="1" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;" value="A JSON is returned (Output)" vertex="1">
+          <mxGeometry height="60" width="220" x="340" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="START" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Start" vertex="1">
+          <mxGeometry height="50" width="100" x="420" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="INPUTJSON" parent="1" style="whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Input JSON" vertex="1">
+          <mxGeometry height="50" width="140" x="400" y="990" as="geometry" />
+        </mxCell>
+        <mxCell id="WRITETESTS" parent="1" style="whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Write Tests (BDD or Unit)" vertex="1">
+          <mxGeometry height="60" width="180" x="380" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="DEV" parent="1" style="whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Do Development against it" vertex="1">
+          <mxGeometry height="60" width="180" x="380" y="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="PLAYWRIGHT" parent="1" style="whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Run Playwright to Validate" vertex="1">
+          <mxGeometry height="60" width="180" x="380" y="1280" as="geometry" />
+        </mxCell>
+        <mxCell id="MATCH" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Is match &amp; tests pass?" vertex="1">
+          <mxGeometry height="80" width="180" x="380" y="1380" as="geometry" />
+        </mxCell>
+        <mxCell id="STOP" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Stop" vertex="1">
+          <mxGeometry height="50" width="100" x="600" y="1500" as="geometry" />
+        </mxCell>
+        <mxCell id="COUNTPP" parent="1" style="whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="count++" vertex="1">
+          <mxGeometry height="50" width="120" x="160" y="1380" as="geometry" />
+        </mxCell>
+        <mxCell id="CHECKCOUNT" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=12;" value="Check count &gt; 5 iterations?" vertex="1">
+          <mxGeometry height="80" width="180" x="100" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="C1" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=12;" value="SECURITY: unvalidated external text -&gt; AI context (indirect injection risk)" vertex="1">
+          <mxGeometry height="80" width="240" x="1120" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="C2" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=12;" value="TOOLS/MCP: node ID has no versioning - stale design can be resolved silently" vertex="1">
+          <mxGeometry height="80" width="240" x="1120" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="C3" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=12;" value="EVAL: same AI judges its own output - evaluator/implementer bias, no golden set" vertex="1">
+          <mxGeometry height="80" width="240" x="620" y="1380" as="geometry" />
+        </mxCell>
+        <mxCell id="C4" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=12;" value="AGENTS/WORKFLOWS: retry loop doesn&#39;t carry forward failure diagnostics each pass" vertex="1">
+          <mxGeometry height="80" width="240" x="1120" y="1380" as="geometry" />
+        </mxCell>
+        <mxCell id="C5" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=12;" value="OUTPUT FORMAT: JSON contract has no schema or version pinned" vertex="1">
+          <mxGeometry height="70" width="240" x="620" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="C6" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=12;" value="No human checkpoint before Stop - fully autonomous merge" vertex="1">
+          <mxGeometry height="70" width="240" x="760" y="1500" as="geometry" />
+        </mxCell>
+        <mxCell id="M1" parent="1" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" value="MCP: Figma MCP Server (live external tool call)" vertex="1">
+          <mxGeometry height="60" width="240" x="1120" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="M2" parent="1" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" value="MCP (implied, not yet built): JIRA MCP / connector for tickets + persona.md access" vertex="1">
+          <mxGeometry height="80" width="240" x="1120" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="S1" parent="1" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;" value="SUBAGENT candidate: Classification - one sub-task per bucket" vertex="1">
+          <mxGeometry height="60" width="240" x="620" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="S2" parent="1" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;" value="SUBAGENT candidate: Write Tests - scoped agent, separate from Dev" vertex="1">
+          <mxGeometry height="60" width="240" x="620" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="S3" parent="1" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;" value="SUBAGENT candidate: Do Development - separate context from tests" vertex="1">
+          <mxGeometry height="60" width="240" x="620" y="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="S4" parent="1" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;" value="SUBAGENT candidate: independent Evaluator - not same agent as Dev" vertex="1">
+          <mxGeometry height="60" width="240" x="620" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="K1" parent="1" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" value="SKILL gap: no test-writing skill - BDD/unit conventions not enforced" vertex="1">
+          <mxGeometry height="60" width="240" x="1120" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="K2" parent="1" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" value="SKILL gap: no dev skill for Component Library + Theme usage" vertex="1">
+          <mxGeometry height="60" width="240" x="1120" y="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="K3" parent="1" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" value="SKILL gap: no persona-resolution skill - ad hoc matching" vertex="1">
+          <mxGeometry height="60" width="240" x="1120" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="PERSONA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;dashed=1;" target="JIRA" value="defines actor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="JIRA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="INGEST" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="SSWA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="INGEST" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="OTHERS_SRC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="INGEST" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="PERSONA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="INGEST" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="FIGMA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="FIGMAMCP" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="FIGMAMCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;dashed=1;" target="FIGMADESIGNS" value="looks up">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="FIGMAMCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;dashed=1;" target="COMPLIB" value="cross-refs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="FIGMAMCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;dashed=1;" target="THEME" value="cross-refs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="FIGMAMCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="INGEST" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="INGEST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="CLASSIFY" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="CLASSIFY" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="ACTOR" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="CLASSIFY" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="SCEN" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="CLASSIFY" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="OTH" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="ACTOR" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="AJSON" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="SCEN" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="AJSON" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="OTH" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="AJSON" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="AJSON" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="START" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="START" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="INPUTJSON" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="INPUTJSON" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="WRITETESTS" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="WRITETESTS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="DEV" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="COMPLIB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;dashed=1;" target="DEV" value="build with">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" edge="1" parent="1" source="THEME" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;dashed=1;" target="DEV" value="style with">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="DEV" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="PLAYWRIGHT" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="PLAYWRIGHT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="MATCH" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e26" edge="1" parent="1" source="MATCH" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="STOP" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e27" edge="1" parent="1" source="MATCH" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="COUNTPP" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e28" edge="1" parent="1" source="COUNTPP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="CHECKCOUNT" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e29" edge="1" parent="1" source="CHECKCOUNT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="STOP" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e30" edge="1" parent="1" source="CHECKCOUNT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;" target="WRITETESTS" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="JIRA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;dashed=1;" target="C1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="PERSONA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;dashed=1;" target="C1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="FIGMAMCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;dashed=1;" target="C1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="FIGMAMCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;dashed=1;" target="C2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" edge="1" parent="1" source="MATCH" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;dashed=1;" target="C3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" edge="1" parent="1" source="COUNTPP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;dashed=1;" target="C4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" edge="1" parent="1" source="AJSON" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;dashed=1;" target="C5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" edge="1" parent="1" source="STOP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b85450;dashed=1;" target="C6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a9" edge="1" parent="1" source="FIGMAMCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#6c8ebf;dashed=1;" target="M1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a10" edge="1" parent="1" source="JIRA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#6c8ebf;dashed=1;" target="M2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a11" edge="1" parent="1" source="PERSONA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#6c8ebf;dashed=1;" target="M2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a12" edge="1" parent="1" source="CLASSIFY" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#82b366;dashed=1;" target="S1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a13" edge="1" parent="1" source="WRITETESTS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#82b366;dashed=1;" target="S2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a14" edge="1" parent="1" source="DEV" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#82b366;dashed=1;" target="S3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a15" edge="1" parent="1" source="MATCH" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#82b366;dashed=1;" target="S4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a16" edge="1" parent="1" source="WRITETESTS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#d79b00;dashed=1;" target="K1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a17" edge="1" parent="1" source="DEV" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#d79b00;dashed=1;" target="K2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a18" edge="1" parent="1" source="INGEST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#d79b00;dashed=1;" target="K3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
