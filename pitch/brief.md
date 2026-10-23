@@ -79,7 +79,7 @@ Working notes for the deck. Captured 2026-10-22. Status: planning; the deck isn'
 
 ## Deck (built 2026-10-22)
 
-`pitch/the-agentic-delivery-pipeline.pptx` (31 slides) and `.pdf` (leave-behind, exported via Keynote). Order: title → about me → 14 question/answer pairs → thank you. Speaker notes are on every slide; the Q&A answers (billing, governance, IP, platform) are in the notes of the last slide.
+Versioned as `pitch/v<N>-the-agentic-delivery-pipeline.pptx` / `.pdf`. **Never modify a published version; publish a new one.** v1 = 31 slides, presented 22 Oct 2026, confirmed to open correctly in PowerPoint for the web. The PDF is the leave-behind, exported via Keynote. Order: title → about me → 14 question/answer pairs → thank you. Speaker notes are on every slide; the Q&A answers (billing, governance, IP, platform) are in the notes of the last slide.
 
 Rebuild (everything installs locally: yarn → `node_modules/`, Python → `.venv/`):
 
@@ -87,7 +87,7 @@ Rebuild (everything installs locally: yarn → `node_modules/`, Python → `.ven
 .venv/bin/python pitch/build/make_gifs.py            # GIFs + PNG assets
 NODE_PATH=node_modules node pitch/build/deck.js      # writes pitch/build/out/*.pptx
 .venv/bin/python pitch/build/animate.py pitch/build/out/the-agentic-delivery-pipeline.pptx
-cp pitch/build/out/the-agentic-delivery-pipeline.pptx pitch/
+.venv/bin/python pitch/build/publish.py              # copies to the next pitch/vN-… and exports the PDF
 ```
 
 `deck.js` names shapes `a<step><kind>_…` to schedule entrance animations, and `!!q` for the question text that morphs into the answer slide's kicker. `animate.py` turns those names into Morph transitions (falling back to Fade) and auto-playing builds.

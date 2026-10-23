@@ -13,7 +13,7 @@ Files:
 - `pipeline-flow.drawio.svg` — editable SVG export of `pipeline-flow.drawio` (the diagram XML is embedded in the `content` attribute). Re-export it from draw.io after editing the `.drawio`; don't hand-edit it.
 - `pipeline-flow-spacious.drawio` — **not** just a re-layout. It is the newer 3-page version: `1 - Flow` (clean flow with red numbered badges 1–7), `2 - AI layers` (stage × MCP / subagent / skill grid), `3 - Critique` (one card per finding, numbers match the badges). Solid borders = confirmed by the user; dashed = suggestion.
 - `mcp.jpeg` — MCP-related illustration.
-- `pitch/` — pitch to Sajal Gupta (Coforge Global Delivery Head). `brief.md` holds the audience, the facts and numbers, the decisions and the rebuild steps; the deck generator is in `pitch/build/`. Tooling stays local (yarn `node_modules/`, `.venv/`); never install anything globally.
+- `pitch/` — pitch to Sajal Gupta (Coforge Global Delivery Head). `brief.md` holds the audience, the facts and numbers, the decisions and the rebuild steps; the deck generator is in `pitch/build/`. Tooling stays local (yarn `node_modules/`, `.venv/`); never install anything globally. Deliverables are versioned as `v1-…`, `v2-…`: never modify a published version; publish the next one with `pitch/build/publish.py`.
 
 No draw.io CLI is installed. Diagrams have been generated as mxGraph XML by script and opened manually in app.diagrams.net.
 
