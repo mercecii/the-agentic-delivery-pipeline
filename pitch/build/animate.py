@@ -91,9 +91,40 @@ def timing_xml(shapes):
     )
 
 
+def unique_ids(xml):
+    """Renumber shapes whose id repeats on the slide.
+
+    PptxGenJS hard-codes id 25 on the slide-number placeholder, which collides
+    with deck.js shapes on busy slides; desktop PowerPoint then asks to repair
+    the file. Tagged (animated) shapes keep their id so spTgt still points at them.
+    """
+    pat = r'<p:cNvPr id="(\d+)" name="([^"]*)"'
+    tagged = lambda name: re.match(r"^a\d+[fwu]_", name)
+    found = re.findall(pat, xml)
+    reserved = {i for i, name in found if tagged(name)}
+    seen, nxt = set(), max((int(i) for i, _ in found), default=0) + 1
+
+    def renumber(m):
+        nonlocal nxt
+        i, name = m.groups()
+        if tagged(name) or (i not in reserved and i not in seen):
+            seen.add(i)
+            return m.group(0)
+        nxt += 1
+        return f'<p:cNvPr id="{nxt - 1}" name="{name}"'
+
+    return re.sub(pat, renumber, xml)
+
+
+def upper_guids(xml):
+    """Section ids must match ST_Guid (uppercase hex); PptxGenJS writes lowercase."""
+    return re.sub(r'(<p14:section [^>]*id=")(\{[0-9a-f-]+\})', lambda m: m.group(1) + m.group(2).upper(), xml)
+
+
 def process(xml):
     if "<p:transition" in xml or "<p:timing" in xml:
         raise SystemExit("slide already has a transition or timing; rebuild from deck.js first")
+    xml = unique_ids(xml)
     shapes = animated_shapes(xml.encode())
     tail = TRANSITION + (timing_xml(shapes) if shapes else "")
     xml = re.sub(r"<p:sld\b", "<p:sld" + ROOT_NS, xml, count=1)
@@ -110,6 +141,8 @@ def main(path):
                 xml, n = process(data.decode("utf-8"))
                 total += n
                 data = xml.encode("utf-8")
+            elif item.filename == "ppt/presentation.xml":
+                data = upper_guids(data.decode("utf-8")).encode("utf-8")
             zout.writestr(item, data)
     shutil.move(tmp, path)
     print(f"animated {total} shapes in {path}")
