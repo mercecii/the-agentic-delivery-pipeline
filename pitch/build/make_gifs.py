@@ -55,7 +55,7 @@ for i in range(N):
     img = Image.new("RGB", (S * 2, S * 2), BG)  # draw 2x, downsample for AA
     d = ImageDraw.Draw(img)
     c, r, w = S, int(S * 0.78), int(S * 0.11)
-    start = -360 * i / N
+    start = 360 * i / N  # Pillow angles run clockwise, so increasing = clockwise spin
     d.arc((c - r, c - r, c + r, c + r), start=start, end=start + 290, fill=CLAY, width=w)
     # arrowhead at the end of the arc
     ang = math.radians(start + 290)

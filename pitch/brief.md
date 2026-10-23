@@ -79,7 +79,8 @@ Working notes for the deck. Captured 2026-10-22. Status: planning; the deck isn'
 
 ## Deck (built 2026-10-22)
 
-Versioned as `pitch/v<N>-the-agentic-delivery-pipeline.pptx` / `.pdf`. **Never modify a published version; publish a new one.** v1 = 31 slides, presented 22 Oct 2026, confirmed to open correctly in PowerPoint for the web. The PDF is the leave-behind, exported via Keynote. Order: title → about me → 14 question/answer pairs → thank you. Speaker notes are on every slide; the Q&A answers (billing, governance, IP, platform) are in the notes of the last slide.
+Versioned as `pitch/v<N>-the-agentic-delivery-pipeline.pptx` / `.pdf`. **Never modify a published version; publish a new one.** v1 = 31 slides, presented 22 Oct 2026, confirmed to open correctly in PowerPoint for the web. The PDF is the leave-behind, exported via Keynote.
+v2 (23 Oct 2026): the loop arrow GIF now spins clockwise, matching its arrowhead. Nothing else changed. Order: title → about me → 14 question/answer pairs → thank you. Speaker notes are on every slide; the Q&A answers (billing, governance, IP, platform) are in the notes of the last slide.
 
 Rebuild (everything installs locally: yarn → `node_modules/`, Python → `.venv/`):
 
