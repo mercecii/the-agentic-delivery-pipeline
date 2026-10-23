@@ -87,7 +87,9 @@ def timing_xml(shapes):
         '<p:prevCondLst><p:cond evt="onPrev" delay="0"><p:tgtEl><p:sldTgt/></p:tgtEl></p:cond></p:prevCondLst>'
         '<p:nextCondLst><p:cond evt="onNext" delay="0"><p:tgtEl><p:sldTgt/></p:tgtEl></p:cond></p:nextCondLst>'
         '</p:seq></p:childTnLst></p:cTn></p:par></p:tnLst>'
-        f'<p:bldLst>{"".join(bld)}</p:bldLst></p:timing>'
+        # An empty bldLst is invalid (slides whose animated shapes are all pictures).
+        + ("<p:bldLst>" + "".join(bld) + "</p:bldLst>" if bld else "")
+        + "</p:timing>"
     )
 
 
@@ -116,15 +118,36 @@ def unique_ids(xml):
     return re.sub(pat, renumber, xml)
 
 
-def upper_guids(xml):
-    """Section ids must match ST_Guid (uppercase hex); PptxGenJS writes lowercase."""
-    return re.sub(r'(<p14:section [^>]*id=")(\{[0-9a-f-]+\})', lambda m: m.group(1) + m.group(2).upper(), xml)
+def single_ppr(xml):
+    """Keep only a paragraph's leading a:pPr.
+
+    PptxGenJS repeats the paragraph properties before every run of a multi-run
+    paragraph; the schema allows a:pPr only as the first child of a:p.
+    """
+    def fix(m):
+        head, body = m.group(1), m.group(2)
+        return head + re.sub(r"<a:pPr\b[^>]*?(?:/>|>.*?</a:pPr>)", "", body, flags=re.S)
+
+    return re.sub(r"(<a:p>(?:<a:pPr\b[^>]*?(?:/>|>.*?</a:pPr>))?)(.*?)(?=</a:p>)", fix, xml, flags=re.S)
+
+
+def fix_presentation(xml):
+    """Uppercase section GUIDs and put notesMasterIdLst where the schema wants it.
+
+    Section ids must match ST_Guid (uppercase hex) and notesMasterIdLst must
+    directly follow sldMasterIdLst; PptxGenJS gets both wrong.
+    """
+    xml = re.sub(r'(<p14:section [^>]*id=")(\{[0-9a-f-]+\})', lambda m: m.group(1) + m.group(2).upper(), xml)
+    m = re.search(r"<p:notesMasterIdLst>.*?</p:notesMasterIdLst>", xml, re.S)
+    if m:
+        xml = xml.replace(m.group(0), "", 1).replace("</p:sldMasterIdLst>", "</p:sldMasterIdLst>" + m.group(0), 1)
+    return xml
 
 
 def process(xml):
     if "<p:transition" in xml or "<p:timing" in xml:
         raise SystemExit("slide already has a transition or timing; rebuild from deck.js first")
-    xml = unique_ids(xml)
+    xml = single_ppr(unique_ids(xml))
     shapes = animated_shapes(xml.encode())
     tail = TRANSITION + (timing_xml(shapes) if shapes else "")
     xml = re.sub(r"<p:sld\b", "<p:sld" + ROOT_NS, xml, count=1)
@@ -142,7 +165,7 @@ def main(path):
                 total += n
                 data = xml.encode("utf-8")
             elif item.filename == "ppt/presentation.xml":
-                data = upper_guids(data.decode("utf-8")).encode("utf-8")
+                data = fix_presentation(data.decode("utf-8")).encode("utf-8")
             zout.writestr(item, data)
     shutil.move(tmp, path)
     print(f"animated {total} shapes in {path}")
